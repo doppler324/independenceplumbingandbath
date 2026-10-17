@@ -1,0 +1,44 @@
+# robots.txt for independenceplumbingandbath.com (1C-Bitrix)
+# Положить в КОРЕНЬ сайта.
+
+User-agent: *
+
+# Служебные разделы Битрикса
+Disallow: /bitrix/
+Disallow: /auth/
+Disallow: /personal/
+Disallow: /search/
+Disallow: /upload/tmp/
+Disallow: /local/php_interface/
+Disallow: /local/docs/
+
+# CSS, JS и картинки из /bitrix/ нужны поисковику, чтобы правильно отрисовать страницу
+Allow: /bitrix/*.css
+Allow: /bitrix/*.js
+Allow: /bitrix/*.png
+Allow: /bitrix/*.jpg
+Allow: /bitrix/*.jpeg
+Allow: /bitrix/*.gif
+Allow: /bitrix/*.svg
+Allow: /bitrix/*.webp
+Allow: /bitrix/*.woff
+Allow: /bitrix/*.woff2
+
+# Дубли страниц и технические параметры
+Disallow: /*index.php$
+Disallow: /*?*q=
+Disallow: /*?*sort=
+Disallow: /*?*SORT=
+Disallow: /*?*PAGEN_
+Disallow: /*?*SHOWALL
+Disallow: /*?*print=
+Disallow: /*?*action=
+Disallow: /*?*back_url
+Disallow: /*?*backurl
+Disallow: /*?*clear_cache
+Disallow: /*?*bitrix_include_areas
+Disallow: /*?*bxajaxid
+Disallow: /*?*login=
+Disallow: /*?*logout=
+
+Sitemap: https://independenceplumbingandbath.com/sitemap.xml
