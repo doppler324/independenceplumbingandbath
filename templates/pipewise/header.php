@@ -49,6 +49,16 @@ Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css2?f
 		return $html;
 	});
 	?>
+	<?php if (!$USER->IsAdmin()): // do not count the site administrator's own visits ?>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z6YKZMVSQ8"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-Z6YKZMVSQ8');
+	</script>
+	<?php endif; ?>
 	<?php $APPLICATION->ShowHead(); ?>
 	<title><?php $APPLICATION->ShowTitle(); ?></title>
 </head>
