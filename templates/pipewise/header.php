@@ -18,6 +18,33 @@ Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css2?f
 	<link rel="shortcut icon" href="/favicon.ico">
 	<link rel="apple-touch-icon" href="<?= SITE_TEMPLATE_PATH ?>/assets/img/apple-touch-icon.png">
 	<meta name="theme-color" content="#0F2B33">
+	<?php
+	// canonical, Open Graph and Twitter tags; values are read when the page is output,
+	// so the title and description set by the page itself are picked up
+	$APPLICATION->AddBufferContent(function () use ($APPLICATION) {
+		$siteUrl = "https://independenceplumbingandbath.com";
+		$title = $APPLICATION->GetPageProperty("title") ?: $APPLICATION->GetTitle();
+		$desc = $APPLICATION->GetPageProperty("description");
+		$url = $siteUrl . $APPLICATION->GetCurPage(false);
+		$e = function ($s) { return htmlspecialcharsbx(strip_tags((string)$s)); };
+
+		$html = '<link rel="canonical" href="' . $e($url) . '">' . "\n";
+		$html .= '<meta property="og:type" content="website">' . "\n";
+		$html .= '<meta property="og:site_name" content="PipeWise">' . "\n";
+		$html .= '<meta property="og:locale" content="en_US">' . "\n";
+		$html .= '<meta property="og:title" content="' . $e($title) . '">' . "\n";
+		if ($desc !== "") {
+			$html .= '<meta property="og:description" content="' . $e($desc) . '">' . "\n";
+		}
+		$html .= '<meta property="og:url" content="' . $e($url) . '">' . "\n";
+		$html .= '<meta name="twitter:card" content="summary">' . "\n";
+		$html .= '<meta name="twitter:title" content="' . $e($title) . '">' . "\n";
+		if ($desc !== "") {
+			$html .= '<meta name="twitter:description" content="' . $e($desc) . '">' . "\n";
+		}
+		return $html;
+	});
+	?>
 	<?php $APPLICATION->ShowHead(); ?>
 	<title><?php $APPLICATION->ShowTitle(); ?></title>
 </head>
