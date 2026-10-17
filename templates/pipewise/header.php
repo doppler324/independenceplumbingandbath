@@ -13,6 +13,11 @@ Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css2?f
 <html lang="<?= LANGUAGE_ID ?>">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="<?= SITE_TEMPLATE_PATH ?>/assets/img/favicon.svg" type="image/svg+xml">
+	<link rel="icon" href="<?= SITE_TEMPLATE_PATH ?>/assets/img/favicon-32.png" sizes="32x32" type="image/png">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<link rel="apple-touch-icon" href="<?= SITE_TEMPLATE_PATH ?>/assets/img/apple-touch-icon.png">
+	<meta name="theme-color" content="#0F2B33">
 	<?php $APPLICATION->ShowHead(); ?>
 	<title><?php $APPLICATION->ShowTitle(); ?></title>
 </head>
