@@ -1,0 +1,93 @@
+/* PipeWise — Bitrix template styles. Tokens come from the design mockup. */
+:root {
+	--ink: #0F2B33;
+	--bg: #F4F6F5;
+	--card: #fff;
+	--line: #D5DEDC;
+	--line-strong: #9DB0AD;
+	--muted: #4A5F66;
+	--text-2: #3D555C;
+	--copper: #B4592B;
+	--copper-d: #A9501F;
+	--peach: #FFB48A;
+	--mint: #E3EEEC;
+	--font-display: 'Fraunces', Georgia, serif;
+	--font-body: 'Public Sans', system-ui, sans-serif;
+	--w: 1200px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--ink);
+	font-family: var(--font-body);
+	font-size: 16px;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; height: auto; }
+a { color: var(--ink); text-decoration: none; }
+a:hover { color: var(--copper-d); }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spacing: -.02em; margin: 0; }
+
+.container { max-width: var(--w); margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.visually-hidden { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* top bar */
+.topbar { background: var(--ink); color: #E8F0EE; font-size: 14px; }
+.topbar__inner { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; justify-content: space-between; padding-top: 10px; padding-bottom: 10px; }
+.topbar__link { color: #FFD2B8; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+.topbar__link:hover { color: #fff; }
+
+/* header */
+.site-header { background: #fff; border-bottom: 1px solid var(--line); padding-top: 18px; }
+.site-header__row { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand__name { font-family: var(--font-display); font-size: 28px; font-weight: 700; letter-spacing: -.02em; }
+.search { display: flex; flex: 1 1 280px; max-width: 420px; border: 1.5px solid var(--line-strong); border-radius: 10px; background: #fff; overflow: hidden; }
+.search__input { flex: 1; min-width: 0; border: 0; outline: 0; padding: 12px 14px; font: inherit; font-size: 15px; color: var(--ink); background: transparent; }
+.search:focus-within { border-color: var(--ink); }
+.search__btn { width: 48px; border: 0; background: var(--ink); cursor: pointer; display: flex; align-items: center; justify-content: center; }
+
+.nav { display: flex; gap: 28px; overflow-x: auto; }
+.nav__link { padding: 14px 2px; font-size: 15px; font-weight: 600; white-space: nowrap; border-bottom: 3px solid transparent; }
+.nav__link:hover { border-bottom-color: var(--copper); color: var(--ink); }
+.nav__link.is-active { border-bottom-color: var(--copper); }
+
+/* inner page shell */
+.page { padding-top: 32px; padding-bottom: 72px; }
+.page__title { font-size: 48px; line-height: 1.08; letter-spacing: -.025em; max-width: 860px; margin-bottom: 24px; }
+.crumbs { display: flex; flex-wrap: wrap; gap: 8px; font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+.crumbs a { color: var(--muted); }
+.crumbs a:hover { color: var(--copper-d); }
+
+/* long-form text (articles, static pages) */
+.prose { max-width: 720px; font-size: 19px; line-height: 1.7; }
+.prose h2 { font-size: 32px; line-height: 1.15; margin: 40px 0 12px; }
+.prose h3 { font-size: 24px; margin: 28px 0 8px; }
+.prose p, .prose ul, .prose ol { margin: 0 0 20px; }
+.prose a { color: var(--copper-d); text-decoration: underline; text-underline-offset: 3px; }
+
+/* shared pieces */
+.eyebrow { font-size: 13px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: var(--copper-d); }
+.btn { display: inline-block; padding: 14px 22px; border-radius: 10px; background: var(--ink); color: #fff; font-weight: 700; font-size: 16px; }
+.btn:hover { color: #fff; background: #1c4450; }
+
+/* footer */
+.site-footer { background: var(--ink); color: #C9D8D5; margin-top: 0; }
+.site-footer__inner { display: flex; flex-wrap: wrap; gap: 32px 64px; justify-content: space-between; padding-top: 48px; padding-bottom: 48px; }
+.site-footer__about { flex: 1 1 280px; display: flex; flex-direction: column; gap: 12px; }
+.site-footer__brand { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: #fff; }
+.site-footer__note { font-size: 14px; line-height: 1.6; max-width: 360px; display: block; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 12px 32px; font-size: 15px; align-items: flex-start; }
+.footer-nav a { color: #E8F0EE; }
+.footer-nav a:hover { color: var(--peach); }
+
+@media (max-width: 720px) {
+	.page__title { font-size: 34px; }
+	.prose { font-size: 17px; }
+	.prose h2 { font-size: 26px; }
+	.nav { gap: 20px; }
+}
