@@ -31,6 +31,8 @@ Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css2?f
 		$e = function ($s) { return htmlspecialcharsbx(strip_tags((string)$s)); };
 
 		$html = '<link rel="canonical" href="' . $e($url) . '">' . "\n";
+		$html .= '<link rel="alternate" hreflang="en-us" href="' . $e($url) . '">' . "\n";
+		$html .= '<link rel="alternate" hreflang="x-default" href="' . $e($url) . '">' . "\n";
 		$html .= '<meta property="og:type" content="website">' . "\n";
 		$html .= '<meta property="og:site_name" content="PipeWise">' . "\n";
 		$html .= '<meta property="og:locale" content="en_US">' . "\n";
