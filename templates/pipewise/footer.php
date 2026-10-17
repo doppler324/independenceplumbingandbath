@@ -2,8 +2,9 @@
 if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
 $isMain = $APPLICATION->GetCurPage(false) === '/';
+$bare = $isMain || defined("PIPEWISE_CUSTOM_HEAD");
 ?>
-<?php if (!$isMain): ?>
+<?php if (!$bare): ?>
 	</div>
 <?php endif; ?>
 </main>

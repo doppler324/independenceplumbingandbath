@@ -4,6 +4,8 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 use Bitrix\Main\Page\Asset;
 
 $isMain = $APPLICATION->GetCurPage(false) === '/';
+// pages that draw their own heading (home, /guides/) define PIPEWISE_CUSTOM_HEAD before including header.php
+$bare = $isMain || defined("PIPEWISE_CUSTOM_HEAD");
 
 Asset::getInstance()->addString('<link rel="preconnect" href="https://fonts.googleapis.com">');
 Asset::getInstance()->addString('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>');
@@ -95,7 +97,7 @@ Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css2?f
 </header>
 
 <main class="site-main">
-<?php if (!$isMain): ?>
+<?php if (!$bare): ?>
 	<div class="container page">
 		<?php
 		$APPLICATION->IncludeComponent("bitrix:breadcrumb", "pipewise", [
