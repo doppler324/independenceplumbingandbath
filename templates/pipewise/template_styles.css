@@ -91,3 +91,17 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; letter-spac
 	.prose h2 { font-size: 26px; }
 	.nav { gap: 20px; }
 }
+
+/* home page */
+.hero { padding-top: 56px; padding-bottom: 40px; }
+.hero__text { display: flex; flex-direction: column; gap: 24px; max-width: 720px; }
+.hero__title { font-size: 56px; line-height: 1.05; letter-spacing: -.025em; }
+.hero__lead { margin: 0; font-size: 19px; line-height: 1.55; color: var(--text-2); }
+.home-section { padding-top: 24px; padding-bottom: 56px; }
+.home-section__title { font-size: 36px; margin-bottom: 24px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.tile { display: flex; flex-direction: column; gap: 4px; padding: 22px; background: var(--card); border: 1.5px solid var(--line); border-radius: 14px; }
+.tile:hover { border-color: var(--copper); color: var(--ink); }
+.tile strong { font-size: 18px; }
+.tile span { font-size: 15px; line-height: 1.45; color: var(--muted); }
+@media (max-width: 720px) { .hero__title { font-size: 38px; } .home-section__title { font-size: 28px; } }
