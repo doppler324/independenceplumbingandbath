@@ -58,6 +58,8 @@ Asset::getInstance()->addString('<link href="https://fonts.googleapis.com/css2?f
 		gtag('js', new Date());
 		gtag('config', 'G-Z6YKZMVSQ8');
 	</script>
+	<!-- Google AdSense -->
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4743829014034637" crossorigin="anonymous"></script>
 	<?php endif; ?>
 	<?php $APPLICATION->ShowHead(); ?>
 	<title><?php $APPLICATION->ShowTitle(); ?></title>
